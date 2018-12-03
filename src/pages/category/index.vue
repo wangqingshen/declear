@@ -4,10 +4,12 @@
       <Nav :curIndex="curIndex" />
       <SecondLeftMenu :pageTitle="pageTitle" :secondTitle="secondTitle" :secondLeftMenuList="homeNavList" :secondLeftMenuIndex="homeNavIndex"/>
     </div>
-    <div class="right">
-      <router-view @emitInit="init"></router-view>
+    <div class="right" ref="scrollBox">
+      <mu-fade-transition>
+        <router-view></router-view>
+      </mu-fade-transition>
+      <GotoTop></GotoTop>
     </div>
-    <GotoTop />
   </div>
 </template>
 

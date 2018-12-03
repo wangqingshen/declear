@@ -1,21 +1,23 @@
 
 <template>
-    <div id="goTop">
+    <mu-scale-transition>
       <div class="goTop" v-show="goTopShow" @click="goTop" title="返回顶部"><i class="goTopIcon"></i></div>
-    </div>
+    </mu-scale-transition>
 </template>
 <script>
     export default {
       name: "goTop",
+      props: {},
       data(){
           return{
             scrollTop: '',
+            scrollBox: '',
             goTopShow:false,
           }
         },
       methods:{
-        handleScroll () {
-          this.scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+        handleScroll() {
+          this.scrollTop = this.scrollBox.scrollTop
           if(this.scrollTop>200){
             this.goTopShow=true
           }else{
@@ -23,25 +25,28 @@
           }
         },
         goTop(){
-          let timer=null,_that=this;
+          let timer=null,_that=this
           cancelAnimationFrame(timer)
           timer=requestAnimationFrame(function fn(){
             if(_that.scrollTop>0){
-              _that.scrollTop-=50;
-              document.body.scrollTop = document.documentElement.scrollTop = _that.scrollTop;
+              _that.scrollTop-=50
+              _that.scrollBox.scrollTop = _that.scrollTop
               timer=requestAnimationFrame(fn)
             }else {
-              cancelAnimationFrame(timer);
+              cancelAnimationFrame(timer)
               _that.goTopShow=false;
             }
           })
         }
       },
       mounted() {
-        window.addEventListener('scroll', this.handleScroll);
+        this.scrollBox = this.$parent.$refs.scrollBox
+        this.$nextTick(res=>{
+          this.scrollBox.addEventListener('scroll', this.handleScroll)
+        })
       },
       destroyed(){
-        window.removeEventListener('scroll', this.handleScroll)
+        this.scrollBox.removeEventListener('scroll', this.handleScroll)
       }
     }
 </script>

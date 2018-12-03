@@ -18,6 +18,7 @@ import Message from 'muse-ui-message'
 import VideoPlayer from 'vue-video-player'
 import 'video.js/dist/video-js.css'
 import 'vue-video-player/src/custom-theme.css'
+import Helpers from 'muse-ui/lib/Helpers';
 
 Vue.use(MuseUI)
 Vue.use(Loading)
@@ -28,6 +29,7 @@ Vue.use(Toast, {
 Vue.use(Message)
 Vue.use(NProgress)
 Vue.use(VideoPlayer)
+Vue.use(Helpers)
 Vue.config.productionTip = false
 Vue.prototype.$regs = Regs
 Vue.prototype.$api = Api

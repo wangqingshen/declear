@@ -4,10 +4,12 @@
       <Nav :curIndex="curIndex" />
       <LeftMenu :pageTitle="pageTitle" :link="linkName" :leftMenuList="leftMenuList" :leftMenuIndex="leftMenuIndex"/>
     </div>
-    <div class="right">
-      <router-view></router-view>
+    <div class="right" ref="scrollBox">
+      <mu-fade-transition>
+        <router-view></router-view>
+      </mu-fade-transition>
+      <GotoTop></GotoTop>
     </div>
-    <GotoTop />
   </div>
 </template>
 
