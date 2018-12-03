@@ -15,7 +15,7 @@ const cardRouter = [
               path: 'firstApply',
               name: 'firstApply',
               component: ()=> import('@/pages/card/firstApply')
-         	}
+         	},
          	// {         
           //     path: 'us',
           //     name: 'us',

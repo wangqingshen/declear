@@ -36,7 +36,7 @@ export default {
         {name: '环境工程治理', url:'/hot'},
         {name: '环境保护税', url:'/hot'},
         {name: '环境保护验收', url:'/hot'},
-        {name: '环境监测', url:'/hot'},
+        {name: '环境监测', url:'/index/notFound'},
       ],
       homeNavIndex: -1,
     }

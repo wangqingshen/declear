@@ -5,9 +5,7 @@
         <div class="logo">
           <img src="../assets/images/logo_header.png" />
         </div>
-        <div class="close-popup" @click="close">
-          <img src="../assets/images/ico_close_selected.png" />
-        </div>
+        <div class="close-popup" @click="close" title=""></div>
       </div>
       <div class="popup-content">
         <div class="popupMenuList">
@@ -80,11 +78,14 @@
       }
       .close-popup{
         cursor: pointer;
-        width: 15px;
-        height: 15px;
-        img{
-          width: 100%;
-          height: 100%;
+        width: 18px;
+        height: 18px;
+        background-image: url(../assets/images/ico_close_norm.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        &:hover{
+          background-image: url(../assets/images/ico_close_selected.png);
         }
       }
     }

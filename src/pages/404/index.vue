@@ -1,8 +1,10 @@
 <template>
     <div class="no-found">
     	<div class="no-found-inner">
-    		<!-- <div class="img">404</div> -->
-    		<div class="txt">环保管家网全新改版，十二月将最新上线，敬请期待！</div>
+    		<img src="../../assets/images/404.png" />
+    		<p class="p1">青溪社区的小伙伴正在黑灯瞎火的开发中</p>
+    		<p class="p2">暂先了解</p>
+    		<mu-button color="#fff" class="login" textColor="#333" to="/card" >排污许可证</mu-button>
     	</div>
     </div>
 </template>
@@ -28,20 +30,23 @@
 		height: 100%;
 		position: relative;
 		.no-found-inner{
-			width: 100%;
-			position: absolute;
-	        top: 50%;
-	        left: 50%;
-	        transform: translate(-50%, -50%);
-	        font-weight: 600;
-			.img{
-				font-size: 150px;
-				color: #002C5A;
+			img {
+				width: 240px;
+				height: 240px;
 			}
-			.txt{
-				font-size: 40px;
-				text-shadow: 10px 10px 10px #ccc;
-				color:#002C5A;
+			.p1{
+				font-size: 18px;
+				color: #666;
+				margin: 50px 0 30px;
+			}
+			.p2{
+				font-size: 14px;
+				color: #999;
+				margin-bottom: 10px;
+			}
+			.mu-button{
+				width: 240px;
+				height: 40px;
 			}
 		}
 	}

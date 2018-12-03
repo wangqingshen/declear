@@ -37,16 +37,18 @@ export default new Router({
               name: 'hot',
               component: hot,
             },
+            {
+               path: '*',
+               name: 'notFound',
+               component: notFound,
+               meta:{
+                  title: '青溪404页面'
+              }
+           },
+
         ]
     },
-     {
-         path: '/404',
-         name: '404',
-         component: notFound,
-         meta:{
-            title: '青溪404页面'
-        }
-     },
+     
      ...accountRouter,
      ...moreRouter,
      ...cardRouter,
