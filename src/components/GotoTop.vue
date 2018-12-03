@@ -41,13 +41,11 @@
       },
       mounted() {
         this.scrollBox = this.$parent.$refs.scrollBox
-        console.log(this.scrollBox)
         this.$nextTick(res=>{
           this.scrollBox.addEventListener('scroll', this.handleScroll)
         })
       },
       destroyed(){
-        console.log(123)
         this.scrollBox.removeEventListener('scroll', this.handleScroll)
       }
     }
