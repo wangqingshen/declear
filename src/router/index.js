@@ -29,13 +29,16 @@ export default new Router({
               name: 'home',
               component: home,
               meta: { 
-                title: ''
+                title: '青溪首页'
               },
             },
             {         
               path: 'hot',
               name: 'hot',
               component: hot,
+              meta: { 
+                title: '热门精选'
+              },
             },
             {
                path: '*',

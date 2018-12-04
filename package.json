@@ -20,6 +20,7 @@
     "muse-ui-progress": "^0.1.0",
     "muse-ui-toast": "^0.3.0",
     "typeface-roboto": "0.0.54",
+    "v-tooltip": "^2.0.0-rc.33",
     "vue": "^2.5.17",
     "vue-router": "^3.0.1",
     "vue-video-player": "^5.0.2",

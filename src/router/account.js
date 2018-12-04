@@ -12,7 +12,8 @@ const accountRouter = [
               component: ()=> import('@/pages/account/login'),
               meta: { 
                 title: '',
-                requireLogin: true
+                requireLogin: true,
+                title: '登录'
               },
          	},
          	{         
@@ -21,7 +22,8 @@ const accountRouter = [
               component: ()=> import('@/pages/account/register'),
               meta: { 
                 title: '',
-                requireLogin: true
+                requireLogin: true,
+                title: '注册'
               },
          	},
          	{         
@@ -29,7 +31,7 @@ const accountRouter = [
               name: 'about',
               component: ()=> import('@/pages/account/about'),
               meta: { 
-                title: ''
+                title: '青溪介绍'
               },
          	},
         ]

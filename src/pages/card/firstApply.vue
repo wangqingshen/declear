@@ -6,15 +6,15 @@
             <h1>{{item.title}}</h1>
             <div class="next">
               <div class="next-item" v-for="(_item, _index) in item.next" :key="_index" >
-                <mu-tooltip :open.sync="_item.state">
-                  <div slot="content">
-                    <h1>说明</h1>
-                    <p>{{_item.tip}}</p>
-                  </div>
-                  <div class="next-item-inner" :class="_item.disabled? 'disabled': _item.hot?'hot':''" @click="goPage(_item)">
+                  <div class="next-item-inner" :class="_item.disabled? 'disabled': _item.hot?'hot':''" @click="goPage(_item)" v-tooltip="{content: _item.tip,
+                    placement: 'auto',
+                    classes: ['info'],
+                    delay: {
+                      show: 200,
+                      hide: 200,
+                    },}">
                     <span>{{_item.title}}</span>
                   </div>
-                </mu-tooltip>
               </div>
             </div>
         </div>

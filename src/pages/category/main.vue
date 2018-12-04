@@ -1,7 +1,5 @@
 <template>
   <div class="container">
-    <h1>{{secondTitle}}</h1>
-    <p class="mark">查阅企业环境影响评价文件，核实行业类别及代码，根据<a href="">《固定污染源排污许可分类管理名录》</a>确定企业所属的管理类别。</p>
     <div class="table-desc">
       <div class="table-item">
         <span>年屠宰生猪10万头及以上、肉牛1万头及以上、肉羊15万头及以上的属于“重点管理”</span>
@@ -12,9 +10,6 @@
         <span>简化管理</span>
       </div>
     </div>
-    <p class="tips">
-      注：年屠宰数量参照环境影响评价文件。
-    </p>
     <div class="category-list">
       <h1>分类</h1>
       <div class="category-inner">
@@ -71,22 +66,6 @@ export default {
 .container{
   padding: 0 50px;
   box-sizing: border-box;
-  >h1{
-    font-size: 30px;
-    line-height: 30px;
-    padding: 34px 0 30px;
-    text-align: left;
-    font-weight: bold;
-  }
-  p.mark{
-    text-align: left;
-    font-size: 14px;
-    color: #333;
-    line-height: 14px;
-    a{
-      color: #002C5A;
-    }
-  }
   .table-desc{
     background: #F7F5F5;
     width: 100%;
@@ -117,12 +96,6 @@ export default {
         border-top: 0;
       }
     }
-  }
-  .tips{
-    font-size: 12px;
-    color: #666;
-    line-height: 12px;
-    text-align: left;
   }
   .category-list{
     margin-top: 40px;

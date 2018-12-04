@@ -29,6 +29,10 @@
 		width: 100%;
 		height: 100%;
 		position: relative;
+		display: flex;
+		align-items: center;
+		flex-grow: column;
+		justify-content: center;
 		.no-found-inner{
 			img {
 				width: 240px;
@@ -47,6 +51,14 @@
 			.mu-button{
 				width: 240px;
 				height: 40px;
+				border-radius: 4px;
+				box-shadow: none;
+				transition: all 0.5s;
+				border: 1px solid #ccc;
+				&:hover{
+					background: #fff;
+					box-shadow: 0 2px 8px 0 rgba(51,51,51,.2);
+				}
 			}
 		}
 	}

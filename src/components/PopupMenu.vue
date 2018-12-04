@@ -99,7 +99,7 @@
           a{
             color: #333;
             font-size: 14px;
-            line-height: 14px;
+            line-height: 16px;
             &.router-link-exact-active {
               color: #002c5a;
               font-weight: 600;

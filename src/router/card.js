@@ -9,12 +9,18 @@ const cardRouter = [
             {         
               path: '/',
               name: 'cardIndex',
-              component: ()=> import('@/pages/card/main')
+              component: ()=> import('@/pages/card/main'),
+              meta: { 
+                title: '排污许可证'
+              },
          	},
          	{         
               path: 'firstApply',
               name: 'firstApply',
-              component: ()=> import('@/pages/card/firstApply')
+              component: ()=> import('@/pages/card/firstApply'),
+              meta: { 
+                title: '首次申请'
+              },
          	},
          	// {         
           //     path: 'us',
