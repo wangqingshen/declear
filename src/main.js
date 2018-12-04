@@ -20,6 +20,7 @@ import 'video.js/dist/video-js.css'
 import 'vue-video-player/src/custom-theme.css'
 import Helpers from 'muse-ui/lib/Helpers'
 import VTooltip from 'v-tooltip'
+import {GeoMap} from './lib/common'
 
 Vue.use(MuseUI)
 Vue.use(Loading)
@@ -39,6 +40,7 @@ Vue.prototype.$loading = Loading
 Vue.prototype.$toast = Toast
 Vue.prototype.$progress = NProgress
 Vue.prototype.$message = Message
+Vue.prototype.$GeoMap = GeoMap
 
 router.beforeEach(async (to, from, next) => {
   /* 路由发生变化修改页面title */

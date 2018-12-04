@@ -5,6 +5,11 @@
       <SecondLeftMenu :pageTitle="pageTitle" :secondTitle="secondTitle" :secondLeftMenuList="homeNavList" :secondLeftMenuIndex="homeNavIndex"/>
     </div>
     <div class="right" ref="scrollBox">
+      <mu-fade-transition>
+        <div class="category-select" v-show="selectedStatus">
+          
+        </div>
+      </mu-fade-transition>
       <div class="category-top">
         <h1>{{secondTitle}}</h1>
         <p class="mark">年屠宰数量参照环境影响评价文件，并核实行业类别及代码，根据<a href="">《固定污染源排污许可分类管理名录》</a>确定企业所属的管理类别。</p>
@@ -37,7 +42,7 @@
               <div class="category-content">
                 <div class="content-item"  v-for="(item, index) in areaList">
                   <div class="content-item-inner">
-                    <pan>{{item}}</pan>
+                    <span>{{item}}</span>
                   </div>
                 </div>
               </div>
@@ -245,7 +250,7 @@ export default {
               font-size: 14px;
               color: #666;
             }
-            
+
           }
         }
       }
