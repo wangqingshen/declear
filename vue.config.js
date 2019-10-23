@@ -1,3 +1,7 @@
+const CompressionWebpackPlugin = require('compression-webpack-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const webpack = require('webpack')
+const isProduction = process.env.VUE_APP_MODE === 'production' || process.env.VUE_APP_MODE === 'alpha'
 module.exports = {
     // baseUrl  type:{string} default:'/' 
     // 将部署应用程序的基本URL。
@@ -40,12 +44,54 @@ module.exports = {
     productionSourceMap: false,
     // devServer:{type:Object} 3个属性host,port,https
     // 它支持webPack-dev-server的所有选项
-
+    configureWebpack: config => {
+      // 引入jquery
+      config.plugins.push(
+        new webpack.ProvidePlugin({
+          $:"jquery",
+          jQuery:"jquery",
+          "windows.jQuery":"jquery"
+          })
+      )
+      if (isProduction) {
+          // externals里的模块不打包
+          // Object.assign(config, {
+          //   externals: externals
+          // })
+  
+          // 上线压缩去除console等信息
+          config.plugins.push(
+            new UglifyJsPlugin({
+                uglifyOptions: {
+                    warnings: false,
+                    compress: {
+                        drop_console: true,
+                        drop_debugger: false,
+                        pure_funcs: ['console.log'] // 移除console
+                    }
+                },
+                sourceMap: false,
+                parallel: true
+            })
+          )
+          // 开启gzip压缩
+          const productionGzipExtensions = /\.(js|css|json|txt|html|ico|svg)(\?.*)?$/i
+          config.plugins.push(
+            new CompressionWebpackPlugin({
+                filename: '[path].gz[query]',
+                algorithm: 'gzip',
+                test: productionGzipExtensions,
+                threshold: 10240,
+                minRatio: 0.8
+            })
+        )
+      }
+    },
     devServer: {
         port: 8081, // 端口号
         // host: 'localhost',
         https: false, // https:{type:Boolean}
-        open: true, //配置自动启动浏览器
+        open: false, //配置自动启动浏览器
         proxy: {
           '/declear': {
             target: 'http://test.2e2c.com/api',

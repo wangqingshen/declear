@@ -1,5 +1,8 @@
 <template>
-  <div class="content">
+  <div id="scrollContent" class="content">
+    <header ref="header">
+      我是顶部
+    </header>
     <div class="desc">
         
     </div>
@@ -41,13 +44,16 @@ export default {
     }
   },
   methods: {
-    
+
   },
   computed: {
    
   },
   created() {
-    
+    console.log(21212)
+    $('#scrollContent').scroll(function() {
+      console.log(111)
+    });
   }
 }
 </script>
@@ -56,9 +62,24 @@ export default {
 .content{
   background: #f7f7f7;
   padding-bottom: 80px;
+  header{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 60px;
+    background: #25283D;
+    color: #FFF;
+    line-height: 60px;
+    transition: transform .5s;
+    transform: translateZ(0);
+    &.is-hide{
+      transform: translateY(-100%);
+    }
+  }
   .desc{
     width: 100%;
-    height: 510px;
+    height: 60vh;
     background-image: url(../../assets/images/banner/card.jpg);
     background-size: cover;
     background-repeat: no-repeat;

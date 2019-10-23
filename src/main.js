@@ -21,6 +21,7 @@ import 'vue-video-player/src/custom-theme.css'
 import Helpers from 'muse-ui/lib/Helpers'
 import VTooltip from 'v-tooltip'
 import {GeoMap} from './lib/common'
+import $ from 'jquery'
 
 Vue.use(MuseUI)
 Vue.use(Loading)
